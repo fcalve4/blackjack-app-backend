@@ -1,14 +1,6 @@
-class Player:
-    def __init__(self, name):
-        self.name = name
+class Dealer:
+    def __init__(self):
         self.hand = []
-
-    def is_bust(self):
-        """
-        Check if the player's hand is bust (over 21).
-        :return: True if the hand is bust, False otherwise.
-        """
-        return self.get_hand_value() > 21
 
 
     def do_action(self, action):
@@ -21,8 +13,8 @@ class Player:
 
     def get_hand(self):
         """
-        Get the player's hand.
-        :return: The player's hand (list of card objects).
+        Get the dealer's hand.
+        :return: The dealer's hand (list of card objects).
         """
         return self.hand
 
