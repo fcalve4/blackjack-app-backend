@@ -28,7 +28,7 @@ class Deck():
         self.cards = [Card(suit, rank) for suit in SUITS for rank in RANKS]
 
 
-    def shuffle_deck(self):
+    def shuffle(self):
         """
         Shuffle the deck of cards.
         """

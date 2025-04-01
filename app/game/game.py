@@ -47,14 +47,25 @@ class Game():
             print("Dealer has a natural!")
             return -1 # Return negative one for DEALER WIN
         return None # Return None if no naturals
+    
+
+    def play_player_turn():
+        pass
+
+    def play_dealer_turn():
+        pass
 
 
     def game_loop(self):
         """
         Main game loop to handle the flow of the poker game.
         """
-        # Deal initial hands
+        # Deal initial hands, 2 cards to player and dealer, dealerhand[0] is upcard
         self.deal_initial_hands()
+
+        if (self.dealer.get_dealer_upcard().rank == 'A'):
+            print(f"Dealer's upcard is an Ace. Insurance is open.")
+            # Implement insurance logic (maybe even money too for when a player is dealt BJ vs dealer Ace)
 
         # Check for naturals
         natural_result = self.check_for_naturals()
