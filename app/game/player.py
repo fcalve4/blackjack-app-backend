@@ -25,6 +25,23 @@ class Player:
         :return: The player's hand (list of card objects).
         """
         return self.hand
+    
+    def get_hand_value(self):
+        total = 0
+        aces = 0
+
+        for card in self.hand:
+            if card == 'A':
+                aces += 1
+                total += 11
+            else:
+                total += card
+
+        while total > 21 and aces:
+            total -= 10
+            aces -= 1
+
+        return total, 'soft' if aces else 'hard'
 
     def __repr__(self):
         return f"{self.name}: {self.hand}"
